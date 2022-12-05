@@ -20,8 +20,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/melsem/openwrt
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: opiz-feeds.conf.default
   CONFIG_FILE: opiz.config
   DIY_P1_SH: opiz-part1.sh
@@ -170,7 +170,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
+        tag_name: OPizWRT-21.02-${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
